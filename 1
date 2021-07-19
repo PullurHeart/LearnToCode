@@ -1,0 +1,22 @@
+using System;
+ 
+public class Test
+{
+	public static void Main()
+	{
+		Console.WriteLine("숫자를 입력하세요 : ");
+int number = int.Parse(Console.ReadLine());
+ 
+if(number < 0)
+Console.WriteLine("음수");
+else if (number > 0) 
+Console.WriteLine("양수");
+else
+Console.WriteLine("0");
+ 
+if (number % 2 ==0)
+Console.WriteLine("짝수");
+else
+Console.WriteLine("홀수");
+	}
+}
