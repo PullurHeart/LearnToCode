@@ -1,0 +1,19 @@
+using System;
+
+namespace TEST
+{
+    class TEST
+    {
+        public static void Main()
+        {
+            Console.WriteLine("사각형의 너비를 입력하세요.");
+            int width = int.Parse(Console.ReadLine());      //int width = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("사각형의 높이를 입력하세요.");
+            int height = int.Parse(Console.ReadLine());     //int height = Convert.ToInt32(Console.ReadLine());
+
+            int ans = width * height;
+            Console.WriteLine($"사각형의 넓이 : {ans}");
+        }
+    }
+}
