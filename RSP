@@ -2,6 +2,14 @@ using System;
 
 namespace RSP_game
 {
+    class Name
+	{
+        public static string User(string inputname=null)
+		{
+            inputname = Console.ReadLine();
+            return inputname;
+		}
+	}
     class RSP_game
     {
         static void Main()
@@ -9,12 +17,7 @@ namespace RSP_game
             int win = 0;
             int lose = 0;
             int draw = 0;
-
-            string name = null;
-
-            Console.WriteLine("유저의 닉네임을 입력하세요.");
-            name = Console.ReadLine();
-
+            
             Random ai = new Random();
             int ainumber = ai.Next(1, 3);
 
