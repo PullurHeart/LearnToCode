@@ -1,0 +1,46 @@
+//연습 문제 1.
+
+using System;
+
+
+namespace TEST
+
+{
+
+class TEST
+
+{
+
+static void Main(string[] args)
+
+{
+
+Console.Write("별 개수 입력 : ");
+
+int number = int.Parse(Console.ReadLine());
+
+
+for(int a = 0; a < number; a++)
+
+{
+
+for (int b = 0; b <= a; b++)
+
+{
+
+Console.Write("*");
+
+}
+
+Console.WriteLine();
+
+}
+
+}
+
+}
+
+}
+
+
+//연습 문제 2.
