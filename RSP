@@ -1,71 +1,76 @@
 using System;
 
 namespace RSP_game
-{
-    class Name
-	{
-        public static string User(string inputname=null)
-		{
-            inputname = Console.ReadLine();
-            return inputname;
-		}
-	}
+{    
     class RSP_game
     {
-        static void Main()
-        {
+        static void Main(string[] args)
+		{
             int win = 0;
             int lose = 0;
             int draw = 0;
-            
-            Random ai = new Random();
-            int ainumber = ai.Next(1, 3);
 
-            Console.WriteLine("가위 바위 보 게임\n{0}님, (가위, 바위, 보) 중 한가지를 입력하세요.", name);
-            string RSP = Console.ReadLine();
+            string name;
+                Console.WriteLine("유저의 닉네임을 입력하세요.");
+                name = Console.ReadLine();            
 
-            switch (RSP)
+            while (name != null)
             {
-                case "가위":
-                    Console.WriteLine("{0}님은 가위를 내셨습니다.", name);
-                    break;
-                case "바위":
-                    Console.WriteLine("{0}님은 바위를 내셨습니다.", name);
-                    break;
-                case "보":
-                    Console.WriteLine("{0}님은 보를 내셨습니다.", name);
-                    break;
-                default:
-                    Console.WriteLine("{0}님, (가위, 바위, 보) 중 한가지를 입력하세요.", name);
-                    break;
-            }
-            switch (ainumber)
-            {
-                case 1:
-                    Console.WriteLine("컴퓨터는 가위를 냈습니다.");
-                    break;
-                case 2:
-                    Console.WriteLine("컴퓨터는 바위를 냈습니다.");
-                    break;
-                case 3:
-                    Console.WriteLine("컴퓨터는 보를 냈습니다.");
-                    break;
-            }
+                Random ai = new Random();
+                int ainumber = ai.Next(1, 3);
 
-            if (RSP == "가위" && ainumber == 2 || RSP == "바위" && ainumber == 3 || RSP == "보" && ainumber == 1)
-            {
-                lose++;
-                Console.WriteLine("패배 T-T\n{0}님은 {1}번 째 패배 중입니다.", name, lose); //패배 멘트를 여러가지로 바꾸기 Random문 사용
-            }
-            else if (RSP == "바위" && ainumber == 1 || RSP == "보" && ainumber == 2 || RSP == "가위" && ainumber == 3)
-            {
-                win++;
-                Console.WriteLine("승리~!\n{0}님은 {1}번 째 승리 중입니다.", name, win);
-            }
-            else
-            {
-                draw++;
-                Console.WriteLine("무승부\n{0}님은 {1}번 째 무승부 중입니다.", name, draw);
+                Console.WriteLine("가위 바위 보 게임\n{0}님, (가위, 바위, 보) 중 한가지를 입력하세요.", name);
+                string RSP = Console.ReadLine();
+
+                switch (RSP)
+                {
+                    case "가위":
+                        Console.WriteLine("{0}님은 가위를 내셨습니다.", name);
+                        break;
+                    case "바위":
+                        Console.WriteLine("{0}님은 바위를 내셨습니다.", name);
+                        break;
+                    case "보":
+                        Console.WriteLine("{0}님은 보를 내셨습니다.", name);
+                        break;
+                    default:
+                        Console.WriteLine("{0}님, (가위, 바위, 보) 중 한가지를 입력하세요.", name);	//Switch문으로 다시 시작
+                        break;
+                }
+                switch (ainumber)
+                {
+                    case 1:
+                        Console.WriteLine("컴퓨터는 가위를 냈습니다.");
+                        break;
+                    case 2:
+                        Console.WriteLine("컴퓨터는 바위를 냈습니다.");
+                        break;
+                    case 3:
+                        Console.WriteLine("컴퓨터는 보를 냈습니다.");
+                        break;
+                }
+
+                if (RSP == "가위" && ainumber == 2 || RSP == "바위" && ainumber == 3 || RSP == "보" && ainumber == 1)
+                {
+                    lose++;
+                    Console.WriteLine("패배 T-T\n{0}님은 {1}번 째 패배 중입니다.", name, lose); //패배 멘트를 여러가지로 바꾸기 Random문 사용
+                }
+                else if (RSP == "바위" && ainumber == 1 || RSP == "보" && ainumber == 2 || RSP == "가위" && ainumber == 3)
+                {
+                    win++;
+                    Console.WriteLine("승리~!\n{0}님은 {1}번 째 승리 중입니다.", name, win);
+                }
+                else
+                {
+                    draw++;
+                    Console.WriteLine("무승부\n{0}님은 {1}번 째 무승부 중입니다.", name, draw);
+                }
+                
+                Console.WriteLine("재시작 하시겠습니까? (Y/N)");
+                string restart = Console.ReadLine();
+
+                if (restart == "N") //Y일때는 while문, else일 때는 재시작 Y/N으로
+                    break;
             }
         }
     }
