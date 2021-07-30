@@ -1,0 +1,145 @@
+/*//연습 문제 1.
+
+using System;
+
+namespace TEST
+{
+	class TEST
+	{
+		static void Main(string[] args)
+		{
+			Console.Write("표현할 '*'의 개수 입력 : ");
+
+			int number = int.Parse(Console.ReadLine());
+
+			for (int a = 0; a < number; a++)
+			{
+
+				for (int b = 0; b <= a; b++)
+
+				{
+					Console.Write("*");
+				}
+				Console.WriteLine();
+			}
+		}
+	}
+}
+
+
+//연습 문제 2.
+using System;
+
+public class Test
+{
+	public static void Main()
+	{
+		Console.Write("표현할 '*'의 개수를 입력하세요 : ");
+		int number = int.Parse(Console.ReadLine());
+
+		for (int a = 0; a < number; a++)
+		{
+			for (int b = number; b > a; b--)
+			{
+				Console.Write("*");
+			}
+			Console.WriteLine();
+		}
+	}
+}
+
+//연습문제 3-1.
+
+using System;
+
+namespace TEST
+{
+	class TEST
+	{
+		static void Main()
+		{
+			Console.WriteLine("표현할 '*'의 개수를 입력하세요");
+			int number = int.Parse(Console.ReadLine());
+			int space = number;
+
+			while(space > 0)
+			{
+				do
+				{
+					Console.Write("*");
+					number--;
+				}
+				while (number > 0);
+			Console.WriteLine();
+			space--;
+			number = space;
+			}
+		}
+	}
+}
+
+//연습문제 3-2.
+
+using System;
+
+namespace TEST
+{
+	class TEST
+	{
+		static void Main()
+		{
+			Console.WriteLine("표현할 '*'의 개수를 입력하세요");
+			int number = int.Parse(Console.ReadLine());
+			int start = 0;
+									
+			while (number > 0)
+			{
+				do
+				{
+					Console.Write("*");
+					start++;
+				}
+				while (start < number);
+
+				Console.WriteLine();				
+				start = 0;
+				number--;
+			}
+		}
+	}
+}
+
+//연습문제 4.
+
+using System;
+
+namespace TEST
+{
+	class TEST
+	{
+		static void Main()
+		{
+			Console.Write("반복 횟수를 입력하세요 : ");
+			int number = int.Parse(Console.ReadLine());
+			int stargoal = 1;
+
+			if (number > 0)
+			{
+				for (int space = 0; space < number; space++)
+				{
+					for (int star = 0; star < stargoal; star++)
+					{
+						Console.Write("*");
+					}
+					Console.WriteLine();
+					stargoal++;
+				}				
+			}
+
+			else
+			{
+				Console.WriteLine("0보다 작거나 같은 수는 입력할 수 없습니다.\n");				
+			}
+		}
+	}
+}
