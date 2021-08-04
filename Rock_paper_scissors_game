@@ -10,9 +10,8 @@ namespace RPS_game
             int lose = 0;
             int draw = 0;
 
-            string name;
-                Console.WriteLine("유저의 닉네임을 입력하세요.");
-                name = Console.ReadLine();            
+            Console.WriteLine("유저의 닉네임을 입력하세요.");
+            string name = Console.ReadLine();            
 
             while (name != null)
             {
